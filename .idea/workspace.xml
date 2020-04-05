@@ -37,6 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/utilities" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
@@ -92,25 +93,57 @@
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
     <state x="173" y="-878" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586116977938" />
-    <state width="1878" height="304" key="GridCell.Tab.0.bottom" timestamp="1586119366118">
+    <state x="522" y="-824" key="#com.intellij.ide.util.MemberChooser" timestamp="1586123153945">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1878" height="304" key="GridCell.Tab.0.bottom/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586119366118" />
-    <state width="1878" height="304" key="GridCell.Tab.0.center" timestamp="1586119366116">
+    <state x="522" y="-824" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123153945" />
+    <state x="447" y="-786" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1586121947654">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1878" height="304" key="GridCell.Tab.0.center/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586119366116" />
-    <state width="1878" height="304" key="GridCell.Tab.0.left" timestamp="1586119366115">
+    <state x="447" y="-786" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586121947654" />
+    <state width="1878" height="298" key="GridCell.Tab.0.bottom" timestamp="1586123686319">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1878" height="304" key="GridCell.Tab.0.left/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586119366115" />
-    <state width="1878" height="304" key="GridCell.Tab.0.right" timestamp="1586119366117">
+    <state width="1878" height="298" key="GridCell.Tab.0.bottom/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123686319" />
+    <state width="1878" height="298" key="GridCell.Tab.0.center" timestamp="1586123686318">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1878" height="304" key="GridCell.Tab.0.right/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586119366117" />
+    <state width="1878" height="298" key="GridCell.Tab.0.center/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123686318" />
+    <state width="1878" height="298" key="GridCell.Tab.0.left" timestamp="1586123686317">
+      <screen x="-251" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="298" key="GridCell.Tab.0.left/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123686317" />
+    <state width="1878" height="298" key="GridCell.Tab.0.right" timestamp="1586123686319">
+      <screen x="-251" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="298" key="GridCell.Tab.0.right/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123686319" />
+    <state width="1878" height="375" key="GridCell.Tab.1.bottom" timestamp="1586123107674">
+      <screen x="-251" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.bottom/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123107674" />
+    <state width="1878" height="375" key="GridCell.Tab.1.bottom/0.23.1680.975/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123077499" />
+    <state width="1878" height="375" key="GridCell.Tab.1.center" timestamp="1586123107668">
+      <screen x="-251" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.center/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123107668" />
+    <state width="1878" height="375" key="GridCell.Tab.1.center/0.23.1680.975/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123077497" />
+    <state width="1878" height="375" key="GridCell.Tab.1.left" timestamp="1586123107667">
+      <screen x="-251" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.left/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123107667" />
+    <state width="1878" height="375" key="GridCell.Tab.1.left/0.23.1680.975/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123077496" />
+    <state width="1878" height="375" key="GridCell.Tab.1.right" timestamp="1586123107671">
+      <screen x="-251" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.right/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123107671" />
+    <state width="1878" height="375" key="GridCell.Tab.1.right/0.23.1680.975/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586123077498" />
     <state x="197" y="-959" key="SettingsEditor" timestamp="1586117086092">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
     <state x="197" y="-959" key="SettingsEditor/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586117086092" />
+    <state x="447" y="-770" key="extract.method.dialog" timestamp="1586120201662">
+      <screen x="-251" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="447" y="-770" key="extract.method.dialog/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586120201662" />
   </component>
 </project>

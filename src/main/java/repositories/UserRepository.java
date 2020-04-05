@@ -2,11 +2,13 @@ package repositories;
 
 import models.User;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class UserRepository implements Repository<User> {
 
@@ -18,8 +20,17 @@ public class UserRepository implements Repository<User> {
     }
 
     @Override
-    public void delete(User user) {
+    public void delete(List<User> users) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
 
+        Iterator itr = users.iterator();
+
+        while (itr.hasNext()) {
+            User user = (User) itr.next();
+            bufferedWriter.write(user.getUsername() + "," + user.getPassword() + "\n");
+        }
+
+        bufferedWriter.close();
     }
 
     @Override
@@ -44,7 +55,22 @@ public class UserRepository implements Repository<User> {
     }
 
     @Override
-    public User getById(Long id) {
-        return null;
+    public List<User> filterBy(List<User> users, Predicate<User> predicate) throws IOException {
+        return users.stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public User findBy(List<User> users, Predicate<User> predicate) throws IOException {
+        return users.stream()
+                .filter(predicate)
+                .findFirst().orElse(null);
+    }
+
+    @Override
+    public boolean isExists(List<User> users, Predicate<User> predicate) throws IOException {
+        return users.stream()
+                .anyMatch(predicate);
     }
 }

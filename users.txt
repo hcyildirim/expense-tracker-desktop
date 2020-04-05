@@ -1,3 +1,2 @@
 huseyin,123
-ali,1234
-fatih,111
+ali,11

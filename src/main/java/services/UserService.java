@@ -20,12 +20,24 @@ public class UserService {
             Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
             Predicate<User> passwordPredicate = d -> d.getPassword().equals(password);
 
-            isAuthenticated = users.stream().anyMatch(usernamePredicate.and(passwordPredicate));
-
+            isAuthenticated = userRepository.isExists(users, usernamePredicate.and(passwordPredicate));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         return isAuthenticated;
+    }
+
+    public void delete(String username) {
+        try {
+            List<User> users = userRepository.all();
+
+            Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
+            users = userRepository.filterBy(users, usernamePredicate.negate());
+
+            userRepository.delete(users);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
