@@ -15,8 +15,12 @@ public class UserRepository implements Repository<User> {
     private final String fileName = "users.txt";
 
     @Override
-    public User create(User user) {
-        return null;
+    public void create(User user) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName, true));
+
+        bufferedWriter.write(user.getUsername() + "," + user.getPassword() + "\n");
+
+        bufferedWriter.close();
     }
 
     @Override

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Button?>
 
-<GridPane fx:controller="controllers.LoginController"
+<GridPane fx:controller="controllers.RegisterController"
           xmlns:fx="http://javafx.com/fxml" alignment="center"
           hgap="10" vgap="10">
     <padding>
@@ -20,7 +20,7 @@
                            maxWidth="Infinity" hgrow="ALWAYS"></ColumnConstraints>
     </columnConstraints>
     <!-- Add Header Label -->
-    <Label text="Login Form" GridPane.columnIndex="0"
+    <Label text="Register Form" GridPane.columnIndex="0"
            GridPane.rowIndex="0" GridPane.columnSpan="2"
            GridPane.rowSpan="1" GridPane.halignment="CENTER" >
         <font>
@@ -42,25 +42,13 @@
     <!-- Add Password Field -->
     <PasswordField fx:id="passwordField" prefHeight="40"
                    GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-
     <!-- Add Submit Button -->
-    <Button fx:id="submitButton" text="Submit"
+    <Button fx:id="submitButton" text="Register"
             prefWidth="100" prefHeight="40" defaultButton="true"
             GridPane.columnIndex="0" GridPane.rowIndex="4"
             GridPane.columnSpan="2" GridPane.rowSpan="1"
             GridPane.halignment="CENTER"
-            onAction="#login">
-        <GridPane.margin>
-            <Insets top="20" right="0" bottom="20" left="0"></Insets>
-        </GridPane.margin>
-    </Button>
-    <!-- Add Submit Button -->
-    <Button fx:id="goToRegisterButton" text="Register"
-            prefWidth="100" prefHeight="40" defaultButton="true"
-            GridPane.columnIndex="0" GridPane.rowIndex="5"
-            GridPane.columnSpan="2" GridPane.rowSpan="1"
-            GridPane.halignment="CENTER"
-            onAction="#goToRegister">
+            onAction="#register">
         <GridPane.margin>
             <Insets top="20" right="0" bottom="20" left="0"></Insets>
         </GridPane.margin>

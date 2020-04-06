@@ -11,6 +11,18 @@ public class UserService {
 
     private UserRepository userRepository = new UserRepository();
 
+    public void create(String username, String password) {
+        try {
+            User user = new User();
+            user.setUsername(username);
+            user.setPassword(password);
+
+            userRepository.create(user);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean authenticate(String username, String password) {
         boolean isAuthenticated = false;
 
@@ -39,5 +51,21 @@ public class UserService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean isUsernameExists(String username) {
+        boolean isExists = false;
+
+        try {
+            List<User> users = userRepository.all();
+
+            Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
+
+            isExists = userRepository.isExists(users, usernamePredicate);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return isExists;
     }
 }

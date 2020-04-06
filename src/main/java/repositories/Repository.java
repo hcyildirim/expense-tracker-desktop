@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public interface Repository<T> {
 
-    T create(T t);
+    void create(T t) throws IOException;
 
     void delete(List<T> ts) throws IOException;
 
