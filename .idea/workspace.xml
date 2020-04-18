@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a41890b4-edee-43e1-ad46-087b79a8d194" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/DashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +91,7 @@
       <updated>1586116847245</updated>
       <workItem from="1586116849172" duration="995000" />
       <workItem from="1586160299048" duration="2567000" />
-      <workItem from="1587246627218" duration="1761000" />
+      <workItem from="1587246627218" duration="2184000" />
     </task>
     <servers />
   </component>
@@ -111,22 +111,22 @@
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
     <state x="447" y="-786" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586160430719" />
-    <state width="1878" height="298" key="GridCell.Tab.0.bottom" timestamp="1587248561214">
+    <state width="1878" height="298" key="GridCell.Tab.0.bottom" timestamp="1587249017698">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1878" height="298" key="GridCell.Tab.0.bottom/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1587248561214" />
-    <state width="1878" height="298" key="GridCell.Tab.0.center" timestamp="1587248561213">
+    <state width="1878" height="298" key="GridCell.Tab.0.bottom/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1587249017698" />
+    <state width="1878" height="298" key="GridCell.Tab.0.center" timestamp="1587249017697">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1878" height="298" key="GridCell.Tab.0.center/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1587248561213" />
-    <state width="1878" height="298" key="GridCell.Tab.0.left" timestamp="1587248561212">
+    <state width="1878" height="298" key="GridCell.Tab.0.center/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1587249017697" />
+    <state width="1878" height="298" key="GridCell.Tab.0.left" timestamp="1587249017696">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1878" height="298" key="GridCell.Tab.0.left/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1587248561212" />
-    <state width="1878" height="298" key="GridCell.Tab.0.right" timestamp="1587248561213">
+    <state width="1878" height="298" key="GridCell.Tab.0.left/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1587249017696" />
+    <state width="1878" height="298" key="GridCell.Tab.0.right" timestamp="1587249017698">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1878" height="298" key="GridCell.Tab.0.right/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1587248561213" />
+    <state width="1878" height="298" key="GridCell.Tab.0.right/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1587249017698" />
     <state width="1878" height="375" key="GridCell.Tab.1.bottom" timestamp="1587247421598">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>

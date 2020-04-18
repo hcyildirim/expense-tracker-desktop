@@ -21,6 +21,9 @@ public class RegisterController {
     private PasswordField passwordField;
 
     @FXML
+    private PasswordField passwordConfirmationField;
+
+    @FXML
     private Button submitButton;
 
     @FXML
@@ -34,6 +37,16 @@ public class RegisterController {
 
         if (passwordField.getText().isEmpty()) {
             AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter your password");
+            return;
+        }
+
+        if (passwordConfirmationField.getText().isEmpty()) {
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter your password (confirm)");
+            return;
+        }
+
+        if (!passwordField.getText().equals(passwordConfirmationField.getText())) {
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Passwords do not match");
             return;
         }
 
