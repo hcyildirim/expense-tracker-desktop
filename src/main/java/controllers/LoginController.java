@@ -1,8 +1,10 @@
 package controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -10,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import javafx.stage.WindowEvent;
 import services.AuthenticationService;
 import utilities.AlertHelper;
 
@@ -32,7 +35,7 @@ public class LoginController {
     private Button goToRegisterButton;
 
     @FXML
-    public void login(ActionEvent event) {
+    public void login(ActionEvent event) throws IOException {
         Window owner = submitButton.getScene().getWindow();
 
         if (usernameField.getText().isEmpty()) {
@@ -51,10 +54,24 @@ public class LoginController {
         boolean isAuthenticated = authenticationService.logIn(username, password);
 
         if (!isAuthenticated) {
-            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Warning", "User not found");
+            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Warning", "Username or email is wrong!");
         } else {
-            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Success", "Login successful");
+            gotoDashboard((Stage) owner);
         }
+    }
+
+    public void gotoDashboard(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/dashboard.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Dashboard");
+        stage.setMaximized(true);
+        stage.show();
+
+        stage.setOnCloseRequest((WindowEvent e) -> {
+            Platform.exit();
+            System.exit(0);
+        });
     }
 
     @FXML
