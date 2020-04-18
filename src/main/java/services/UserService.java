@@ -23,23 +23,6 @@ public class UserService {
         }
     }
 
-    public boolean authenticate(String username, String password) {
-        boolean isAuthenticated = false;
-
-        try {
-            List<User> users = userRepository.all();
-
-            Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
-            Predicate<User> passwordPredicate = d -> d.getPassword().equals(password);
-
-            isAuthenticated = userRepository.isExists(users, usernamePredicate.and(passwordPredicate));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return isAuthenticated;
-    }
-
     public void delete(String username) {
         try {
             List<User> users = userRepository.all();

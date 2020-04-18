@@ -44,7 +44,7 @@
                    GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
     <!-- Add Submit Button -->
-    <Button fx:id="submitButton" text="Submit"
+    <Button fx:id="submitButton" text="Login"
             prefWidth="100" prefHeight="40" defaultButton="true"
             GridPane.columnIndex="0" GridPane.rowIndex="4"
             GridPane.columnSpan="2" GridPane.rowSpan="1"

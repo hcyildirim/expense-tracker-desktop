@@ -10,14 +10,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-import services.UserService;
+import services.AuthenticationService;
 import utilities.AlertHelper;
 
 import java.io.IOException;
 
 public class LoginController {
 
-    private UserService userService = new UserService();
+    private AuthenticationService authenticationService = new AuthenticationService();
 
     @FXML
     private TextField usernameField;
@@ -48,7 +48,7 @@ public class LoginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        boolean isAuthenticated = userService.authenticate(username, password);
+        boolean isAuthenticated = authenticationService.logIn(username, password);
 
         if (!isAuthenticated) {
             AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Warning", "User not found");
