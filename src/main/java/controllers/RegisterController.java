@@ -2,13 +2,18 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
 import javafx.stage.Window;
 import services.UserService;
 import utilities.AlertHelper;
+
+import java.io.IOException;
+import java.util.Optional;
 
 public class RegisterController {
 
@@ -27,7 +32,7 @@ public class RegisterController {
     private Button submitButton;
 
     @FXML
-    public void register(ActionEvent event) {
+    public void register(ActionEvent event) throws IOException {
         Window owner = submitButton.getScene().getWindow();
 
         if (usernameField.getText().isEmpty()) {
@@ -59,8 +64,28 @@ public class RegisterController {
             AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Warning", "Username already taken. Please choose another one.");
         } else {
             userService.create(username, password);
+            Optional<ButtonType> result = AlertHelper.showAlertAndWait(Alert.AlertType.INFORMATION, owner, "Success", "Your registration completed successfully.");
 
-            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Success", "Your registration completed successfully.");
+            if (!result.isPresent()) {
+                goToLogin((Stage) owner);
+            } else if (result.get() == ButtonType.OK) {
+                goToLogin((Stage) owner);
+            } else if (result.get() == ButtonType.CANCEL) {
+                goToLogin((Stage) owner);
+            }
         }
+    }
+
+    @FXML
+    public void goToLogin(ActionEvent event) throws IOException {
+        goToLogin((Stage) ((Node) event.getSource()).getScene().getWindow());
+    }
+
+    private void goToLogin(Stage stage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+        Scene scene = new Scene(loader.load(), 800, 500);
+        stage.setScene(scene);
+        stage.setTitle("Login");
+        stage.show();
     }
 }

@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -76,24 +77,11 @@ public class LoginController {
 
     @FXML
     public void goToRegister(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/register.fxml"));
-
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/register.fxml"));
         Scene scene = new Scene(loader.load(), 800, 500);
-        Stage stage = new Stage();
-        stage.setTitle("Register");
         stage.setScene(scene);
+        stage.setTitle("Register");
         stage.show();
-
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/register.fxml"));
-//        Parent root;
-//
-//        try {
-//            root = loader.load();
-//        } catch (IOException ioe) {
-//            return;
-//        }
-//
-//        goToRegisterButton.getScene().setRoot(root);
     }
 }
