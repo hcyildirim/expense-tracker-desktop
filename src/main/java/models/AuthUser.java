@@ -3,10 +3,10 @@ package models;
 public class AuthUser {
     private static AuthUser instance;
 
-    private String userName;
+    private String username;
 
-    private AuthUser(String userName) {
-        this.userName = userName;
+    private AuthUser(String username) {
+        this.username = username;
     }
 
     public static AuthUser getInstance(String userName) {
@@ -16,11 +16,11 @@ public class AuthUser {
         return instance;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
     public void cleanUserSession() {
-        userName = null;
+        username = null;
     }
 }
