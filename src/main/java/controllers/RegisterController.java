@@ -61,18 +61,19 @@ public class RegisterController {
         boolean isExists = userService.isUsernameExists(username);
 
         if (isExists) {
-            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Warning", "Username already taken. Please choose another one.");
-        } else {
-            userService.create(username, password);
-            Optional<ButtonType> result = AlertHelper.showAlertAndWait(Alert.AlertType.INFORMATION, owner, "Success", "Your registration completed successfully.");
+            AlertHelper.showAlert(Alert.AlertType.WARNING, owner, "Warning", "Username already taken. Please choose another one.");
+            return;
+        }
 
-            if (!result.isPresent()) {
-                goToLogin((Stage) owner);
-            } else if (result.get() == ButtonType.OK) {
-                goToLogin((Stage) owner);
-            } else if (result.get() == ButtonType.CANCEL) {
-                goToLogin((Stage) owner);
-            }
+        userService.create(username, password);
+        Optional<ButtonType> result = AlertHelper.showAlertAndWait(Alert.AlertType.INFORMATION, owner, "Success", "Your registration completed successfully.");
+
+        if (!result.isPresent()) {
+            goToLogin((Stage) owner);
+        } else if (result.get() == ButtonType.OK) {
+            goToLogin((Stage) owner);
+        } else if (result.get() == ButtonType.CANCEL) {
+            goToLogin((Stage) owner);
         }
     }
 

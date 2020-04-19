@@ -55,13 +55,14 @@ public class LoginController {
         boolean isAuthenticated = authenticationService.logIn(username, password);
 
         if (!isAuthenticated) {
-            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Warning", "Username or email is wrong!");
-        } else {
-            gotoDashboard((Stage) owner);
+            AlertHelper.showAlert(Alert.AlertType.WARNING, owner, "Warning", "Username or email is wrong!");
+            return;
         }
+
+        goToDashboard((Stage) owner);
     }
 
-    public void gotoDashboard(Stage stage) throws IOException {
+    public void goToDashboard(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/dashboard.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);

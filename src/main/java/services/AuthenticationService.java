@@ -20,7 +20,7 @@ public class AuthenticationService {
             Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
             Predicate<User> passwordPredicate = d -> d.getPassword().equals(password);
 
-            if (loggedIn = userRepository.isExists(users, usernamePredicate.and(passwordPredicate)))
+            if (loggedIn = userRepository.isExists(usernamePredicate.and(passwordPredicate)))
             {
                 AuthUser.getInstance(username);
             }

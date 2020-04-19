@@ -4,7 +4,6 @@ import models.User;
 import repositories.UserRepository;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.function.Predicate;
 
 public class UserService {
@@ -25,12 +24,9 @@ public class UserService {
 
     public void delete(String username) {
         try {
-            List<User> users = userRepository.all();
+            User user = userRepository.getById(username);
 
-            Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
-            users = userRepository.filterBy(users, usernamePredicate.negate());
-
-            userRepository.delete(users);
+            userRepository.delete(user);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -40,11 +36,9 @@ public class UserService {
         boolean isExists = false;
 
         try {
-            List<User> users = userRepository.all();
-
             Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
 
-            isExists = userRepository.isExists(users, usernamePredicate);
+            isExists = userRepository.isExists(usernamePredicate);
         } catch (IOException e) {
             e.printStackTrace();
         }

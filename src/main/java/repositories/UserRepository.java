@@ -6,36 +6,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class UserRepository implements Repository<User> {
+public class UserRepository implements Repository<User, String> {
 
     private final String fileName = "users.txt";
-
-    @Override
-    public void create(User user) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName, true));
-
-        bufferedWriter.write(user.getUsername() + "," + user.getPassword() + "\n");
-
-        bufferedWriter.close();
-    }
-
-    @Override
-    public void delete(List<User> users) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
-
-        Iterator itr = users.iterator();
-
-        while (itr.hasNext()) {
-            User user = (User) itr.next();
-            bufferedWriter.write(user.getUsername() + "," + user.getPassword() + "\n");
-        }
-
-        bufferedWriter.close();
-    }
 
     @Override
     public List<User> all() throws IOException {
@@ -59,22 +35,65 @@ public class UserRepository implements Repository<User> {
     }
 
     @Override
-    public List<User> filterBy(List<User> users, Predicate<User> predicate) throws IOException {
-        return users.stream()
-                .filter(predicate)
-                .collect(Collectors.toList());
-    }
+    public User getById(String username) throws IOException {
+        Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
 
-    @Override
-    public User findBy(List<User> users, Predicate<User> predicate) throws IOException {
-        return users.stream()
-                .filter(predicate)
+        return all().stream()
+                .filter(usernamePredicate)
                 .findFirst().orElse(null);
     }
 
     @Override
-    public boolean isExists(List<User> users, Predicate<User> predicate) throws IOException {
-        return users.stream()
+    public void create(User user) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName, true));
+
+        bufferedWriter.write(user.getUsername() + "," + user.getPassword() + "\n");
+
+        bufferedWriter.close();
+    }
+
+    @Override
+    public void update(User user) throws IOException {
+        List<User> users = all();
+
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+        Iterator itr = users.iterator();
+
+        while (itr.hasNext()) {
+            User u = (User) itr.next();
+
+            if (u.getUsername().equalsIgnoreCase(user.getUsername())) {
+                bufferedWriter.write(user.getUsername() + "," + user.getPassword() + "\n");
+            } else {
+                bufferedWriter.write(u.getUsername() + "," + u.getPassword() + "\n");
+            }
+        }
+
+        bufferedWriter.close();
+    }
+
+    @Override
+    public void delete(User user) throws IOException {
+        List<User> users = all();
+
+        Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(user.getUsername());
+        users = users.stream()
+                .filter(usernamePredicate.negate()) // select users except this username
+                .collect(Collectors.toList());
+
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+        Iterator itr = users.iterator();
+
+        while (itr.hasNext()) {
+            User u = (User) itr.next();
+            bufferedWriter.write(u.getUsername() + "," + u.getPassword() + "\n");
+        }
+
+        bufferedWriter.close();
+    }
+
+    public boolean isExists(Predicate<User> predicate) throws IOException {
+        return all().stream()
                 .anyMatch(predicate);
     }
 }

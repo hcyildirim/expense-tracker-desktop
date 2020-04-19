@@ -2,20 +2,17 @@ package repositories;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.function.Predicate;
 
-public interface Repository<T> {
-
-    void create(T t) throws IOException;
-
-    void delete(List<T> ts) throws IOException;
+public interface Repository<T, V> {
 
     List<T> all() throws IOException;
 
-    List<T> filterBy(List<T> ts, Predicate<T> p) throws IOException;
+    T getById(V id) throws IOException;
 
-    T findBy(List<T> ts, Predicate<T> p) throws IOException;
+    void create(T t) throws IOException;
 
-    boolean isExists(List<T> ts, Predicate<T> p) throws IOException;
+    void update(T t) throws IOException;
+
+    void delete(T t) throws IOException;
 
 }
