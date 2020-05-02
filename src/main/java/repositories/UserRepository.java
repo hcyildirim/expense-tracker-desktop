@@ -77,9 +77,9 @@ public class UserRepository implements Repository<User, String> {
     public void delete(User user) throws IOException {
         List<User> users = all();
 
-        Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(user.getUsername());
+        Predicate<User> uuidPredicate = d -> d.getId().equalsIgnoreCase(user.getId());
         users = users.stream()
-                .filter(usernamePredicate.negate()) // select users except this username
+                .filter(uuidPredicate.negate()) // select users except this id
                 .collect(Collectors.toList());
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
