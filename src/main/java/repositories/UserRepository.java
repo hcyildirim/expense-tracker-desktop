@@ -23,8 +23,9 @@ public class UserRepository implements Repository<User, String> {
             String[] data = row.split(",");
 
             User user = new User();
-            user.setUsername(data[0]);
-            user.setPassword(data[1]);
+            user.setId(data[0]);
+            user.setUsername(data[1]);
+            user.setPassword(data[2]);
 
             users.add(user);
         }
@@ -35,11 +36,11 @@ public class UserRepository implements Repository<User, String> {
     }
 
     @Override
-    public User getById(String username) throws IOException {
-        Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
+    public User getById(String uuid) throws IOException {
+        Predicate<User> uuidPredicate = d -> d.getId().equalsIgnoreCase(uuid);
 
         return all().stream()
-                .filter(usernamePredicate)
+                .filter(uuidPredicate)
                 .findFirst().orElse(null);
     }
 
@@ -47,7 +48,7 @@ public class UserRepository implements Repository<User, String> {
     public void create(User user) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName, true));
 
-        bufferedWriter.write(user.getUsername() + "," + user.getPassword() + "\n");
+        bufferedWriter.write(user.getId() + "," + user.getUsername() + "," + user.getPassword() + "\n");
 
         bufferedWriter.close();
     }
@@ -62,10 +63,10 @@ public class UserRepository implements Repository<User, String> {
         while (itr.hasNext()) {
             User u = (User) itr.next();
 
-            if (u.getUsername().equalsIgnoreCase(user.getUsername())) {
-                bufferedWriter.write(user.getUsername() + "," + user.getPassword() + "\n");
+            if (u.getId().equalsIgnoreCase(user.getId())) {
+                bufferedWriter.write(user.getId() + "," + user.getUsername() + "," + user.getPassword() + "\n");
             } else {
-                bufferedWriter.write(u.getUsername() + "," + u.getPassword() + "\n");
+                bufferedWriter.write(u.getId() + "," + u.getUsername() + "," + u.getPassword() + "\n");
             }
         }
 
@@ -90,6 +91,14 @@ public class UserRepository implements Repository<User, String> {
         }
 
         bufferedWriter.close();
+    }
+
+    public User getByUsername(String username) throws IOException {
+        Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
+
+        return all().stream()
+                .filter(usernamePredicate)
+                .findFirst().orElse(null);
     }
 
     public boolean isExists(Predicate<User> predicate) throws IOException {
