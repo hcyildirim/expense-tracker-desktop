@@ -5,7 +5,6 @@ import models.User;
 import repositories.UserRepository;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.function.Predicate;
 
 public class AuthenticationService {
@@ -15,8 +14,6 @@ public class AuthenticationService {
         boolean loggedIn = false;
 
         try {
-            List<User> users = userRepository.all();
-
             Predicate<User> usernamePredicate = d -> d.getUsername().equalsIgnoreCase(username);
             Predicate<User> passwordPredicate = d -> d.getPassword().equals(password);
 
