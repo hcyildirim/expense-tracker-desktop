@@ -1,7 +1,7 @@
 package services;
 
-import models.AuthUser;
 import models.User;
+import models.UserSession;
 import repositories.UserRepository;
 
 import java.io.IOException;
@@ -19,7 +19,8 @@ public class AuthenticationService {
 
             if (loggedIn = userRepository.isExists(usernamePredicate.and(passwordPredicate)))
             {
-                AuthUser.getInstance(username);
+                User user = userRepository.getByUsername(username);
+                UserSession.getInstance().setUser(user);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -28,8 +29,7 @@ public class AuthenticationService {
         return loggedIn;
     }
 
-    public void logOut(String username) {
-        AuthUser session = AuthUser.getInstance(username);
-        session.cleanUserSession();
+    public void logOut() {
+        UserSession.getInstance().removeUser();
     }
 }
