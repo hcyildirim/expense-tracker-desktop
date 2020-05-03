@@ -48,7 +48,7 @@ public class UserRepository implements Repository<User, String> {
     public void create(User user) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName, true));
 
-        bufferedWriter.write(user.getId() + "," + user.getUsername() + "," + user.getPassword() + "\n");
+        bufferedWriter.write(user.toWriteable() + "\n");
 
         bufferedWriter.close();
     }
@@ -64,9 +64,9 @@ public class UserRepository implements Repository<User, String> {
             User u = (User) itr.next();
 
             if (u.getId().equalsIgnoreCase(user.getId())) {
-                bufferedWriter.write(user.getId() + "," + user.getUsername() + "," + user.getPassword() + "\n");
+                bufferedWriter.write(user.toWriteable() + "\n");
             } else {
-                bufferedWriter.write(u.getId() + "," + u.getUsername() + "," + u.getPassword() + "\n");
+                bufferedWriter.write(u.toWriteable() + "\n");
             }
         }
 
@@ -87,7 +87,7 @@ public class UserRepository implements Repository<User, String> {
 
         while (itr.hasNext()) {
             User u = (User) itr.next();
-            bufferedWriter.write(u.getUsername() + "," + u.getPassword() + "\n");
+            bufferedWriter.write(u.toWriteable() + "\n");
         }
 
         bufferedWriter.close();

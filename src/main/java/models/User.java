@@ -31,4 +31,8 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String toWriteable() {
+        return String.format("%s,%s,%s", this.id, this.username, this.password);
+    }
 }
