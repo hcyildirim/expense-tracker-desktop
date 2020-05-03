@@ -4,9 +4,12 @@ import models.Transaction;
 import repositories.TransactionRepository;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 import java.io.IOException;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class TransactionService {
 
@@ -19,13 +22,21 @@ public class TransactionService {
             transaction.setDescription(description);
             transaction.setType(type);
             transaction.setAmount(amount);
-            transaction.setCreatedAt(new Timestamp(System.currentTimeMillis()));
+            transaction.setCreatedAt(LocalDateTime.now());
             transaction.setUserId(userId);
 
             transactionRepository.create(transaction);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Transaction> getByUserId(String uuid) throws IOException {
+        Predicate<Transaction> userUuidPredicate = d -> d.getUserId().equalsIgnoreCase(uuid);
+
+        return transactionRepository.all().stream()
+                .filter(userUuidPredicate)
+                .collect(Collectors.toList());
     }
 }
 

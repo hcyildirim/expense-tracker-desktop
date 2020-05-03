@@ -2,6 +2,7 @@ package repositories;
 
 
 import models.Transaction;
+import utilities.LocalDateTimeFormatterHelper;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -37,7 +38,7 @@ public class TransactionRepository implements Repository<Transaction, String> {
             }
 
             transaction.setAmount(new BigDecimal(data[3]));
-            transaction.setCreatedAt(Timestamp.valueOf(data[4]));
+            transaction.setCreatedAt(LocalDateTimeFormatterHelper.parse(data[4]));
             transaction.setUserId(data[5]);
 
             transactions.add(transaction);

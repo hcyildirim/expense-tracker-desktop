@@ -1,8 +1,9 @@
 package models;
 
+import utilities.LocalDateTimeFormatterHelper;
+
 import java.math.BigDecimal;
-import java.sql.Time;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Transaction {
     private String id;
@@ -13,7 +14,7 @@ public class Transaction {
 
     private BigDecimal amount;
 
-    private Timestamp createdAt;
+    private LocalDateTime createdAt;
 
     private String userId;
 
@@ -46,7 +47,7 @@ public class Transaction {
     }
 
     public BigDecimal getAmount() {
-        if(getType() == Type.INCOME) {
+        if(getType() == Type.OUTCOME) {
             return amount.multiply(BigDecimal.valueOf(-1));
         }
 
@@ -57,11 +58,11 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public Timestamp getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -74,6 +75,6 @@ public class Transaction {
     }
 
     public String toWriteable() {
-        return String.format("%s,%s,%s,%.2f,%d,%s", this.id, this.description, this.type.toString(), this.amount, this.createdAt.getTime(), this.userId);
+        return String.format("%s,%s,%s,%.2f,%s,%s", this.id, this.description, this.type.toString(), this.amount, LocalDateTimeFormatterHelper.format(this.createdAt), this.userId);
     }
 }

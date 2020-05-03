@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
-<GridPane fx:controller="controllers.LoginController"
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane fx:controller="controllers.DashboardController"
           xmlns:fx="http://javafx.com/fxml" alignment="center"
           hgap="10" vgap="10">
     <padding>
@@ -16,11 +14,21 @@
 
     <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" GridPane.rowIndex="0">
         <columns>
-            <TableColumn text="First Name">
+            <TableColumn text="Type" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="type" />
+                </cellValueFactory>
             </TableColumn>
-            <TableColumn text="Last Name">
+            <TableColumn text="Description" prefWidth="400">
+                <cellValueFactory><PropertyValueFactory property="description" />
+                </cellValueFactory>
             </TableColumn>
-            <TableColumn text="Email Address">
+            <TableColumn text="Amount" prefWidth="300">
+                <cellValueFactory><PropertyValueFactory property="amount" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Created At" prefWidth="300">
+                <cellValueFactory><PropertyValueFactory property="createdAt" />
+                </cellValueFactory>
             </TableColumn>
         </columns>
     </TableView>
