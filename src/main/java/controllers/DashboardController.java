@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 import models.Transaction;
 import models.UserSession;
@@ -22,11 +23,15 @@ public class DashboardController implements Initializable {
     @FXML
     private TableView<Transaction> tableView;
 
+    @FXML
+    private ComboBox<Transaction.Type> typeOptions;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             transactions = FXCollections.observableArrayList(transactionService.getByUserId(UserSession.getInstance().getUser().getId()));
             tableView.getItems().setAll(transactions);
+            typeOptions.getItems().setAll(Transaction.Type.values());
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -32,13 +32,12 @@
             </TableColumn>
         </columns>
     </TableView>
-    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="0" GridPane.rowIndex="2">
+    <HBox spacing="10" alignment="center" GridPane.columnIndex="0" GridPane.rowIndex="2">
         <TextField fx:id="descriptionField" promptText="Description"
-                   prefWidth="90"/>
+                   prefWidth="400"/>
         <TextField fx:id="amountField" promptText="Amount"
-                   prefWidth="90"/>
-        <TextField fx:id="typeField" promptText="Type"
-                   prefWidth="150"/>
-        <Button text="Add"/>
+                   prefWidth="400"/>
+        <ComboBox fx:id="typeOptions" prefWidth="400" promptText="-- select an option --" />
+        <Button text="Add" prefWidth="100"/>
     </HBox>
 </GridPane>
