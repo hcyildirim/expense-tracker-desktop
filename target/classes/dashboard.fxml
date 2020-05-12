@@ -16,7 +16,7 @@
     <HBox spacing="5" alignment="top_right" GridPane.columnIndex="0" GridPane.rowIndex="1">
         <Label fx:id="lblUser" prefWidth="250" alignment="CENTER_RIGHT">
             <font>
-                <Font name="System Bold" size="16.0" />
+                <Font name="System Bold" size="15.0" />
             </font>
         </Label>
     </HBox>
@@ -46,6 +46,6 @@
         <TextField fx:id="amountField" promptText="Amount"
                    prefWidth="400"/>
         <ComboBox fx:id="typeOptions" prefWidth="400" promptText="-- select an option --" />
-        <Button text="Add" prefWidth="100"/>
+        <Button fx:id="addButton" text="Add" prefWidth="100" onAction="#addTransaction"/>
     </HBox>
 </GridPane>
