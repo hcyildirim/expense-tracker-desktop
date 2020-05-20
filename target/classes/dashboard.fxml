@@ -14,6 +14,12 @@
     </padding>
 
     <HBox spacing="5" alignment="top_right" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Label fx:id="lblTotal" prefWidth="250" alignment="CENTER_LEFT">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+
         <Label fx:id="lblUser" prefWidth="250" alignment="CENTER_RIGHT">
             <font>
                 <Font name="System Bold" size="15.0" />

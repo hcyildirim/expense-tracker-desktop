@@ -12,7 +12,7 @@ public class Transaction {
 
     private Type type;
 
-    private BigDecimal amount;
+    private Float amount;
 
     private LocalDateTime createdAt;
 
@@ -46,15 +46,15 @@ public class Transaction {
         this.type = type;
     }
 
-    public BigDecimal getAmount() {
+    public float getAmount() {
         if(getType() == Type.OUTCOME) {
-            return amount.multiply(BigDecimal.valueOf(-1));
+            return amount * -1;
         }
 
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Float amount) {
         this.amount = amount;
     }
 

@@ -15,7 +15,7 @@ public class TransactionService {
 
     private TransactionRepository transactionRepository = new TransactionRepository();
 
-    public void create(String description, BigDecimal amount, Transaction.Type type, String userId) {
+    public void create(String description, Float amount, Transaction.Type type, String userId) {
         try {
             Transaction transaction = new Transaction();
             transaction.setId(UUID.randomUUID().toString());
