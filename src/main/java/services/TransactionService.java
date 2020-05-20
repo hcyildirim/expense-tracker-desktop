@@ -15,17 +15,31 @@ public class TransactionService {
 
     private TransactionRepository transactionRepository = new TransactionRepository();
 
-    public void create(String description, Float amount, Transaction.Type type, String userId) {
-        try {
-            Transaction transaction = new Transaction();
-            transaction.setId(UUID.randomUUID().toString());
-            transaction.setDescription(description);
-            transaction.setType(type);
-            transaction.setAmount(amount);
-            transaction.setCreatedAt(LocalDateTime.now());
-            transaction.setUserId(userId);
+    public Transaction create(String description, Float amount, Transaction.Type type, String userId) {
+        Transaction transaction = new Transaction();
+        transaction.setId(UUID.randomUUID().toString());
+        transaction.setDescription(description);
+        transaction.setType(type);
+        transaction.setAmount(amount);
+        transaction.setCreatedAt(LocalDateTime.now());
+        transaction.setUserId(userId);
 
+        try {
             transactionRepository.create(transaction);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return transaction;
+    }
+
+    public void delete(String id) {
+        try {
+            Transaction transaction = transactionRepository.getById(id);
+
+            if (transaction != null) {
+                transactionRepository.delete(transaction);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

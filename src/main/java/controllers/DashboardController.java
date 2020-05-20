@@ -23,7 +23,7 @@ public class DashboardController implements Initializable {
 
     private TransactionService transactionService = new TransactionService();
 
-    private ObservableList<Transaction> transactions;
+    private ObservableList<Transaction> transactions = FXCollections.observableArrayList();
 
     @FXML
     private TableView<Transaction> tableView;
@@ -81,15 +81,26 @@ public class DashboardController implements Initializable {
         Float amount = Float.valueOf(amountField.getText());
         Transaction.Type type = typeOptions.getValue();
 
-        transactionService.create(description, amount, type, UserSession.getInstance().getUser().getId());
+        Transaction transaction = transactionService.create(description, amount, type, UserSession.getInstance().getUser().getId());
+        transactions.add(transaction);
 
-        populateTableItems();
+        setTotalLabelText();
+        clearInputs();
+    }
+
+    @FXML
+    public void deleteTransaction(ActionEvent event) throws IOException {
+        Transaction transaction = tableView.getSelectionModel().getSelectedItem();
+
+        transactions.remove(transaction);
+        transactionService.delete(transaction.getId());
+
         setTotalLabelText();
         clearInputs();
     }
 
     private void populateTableItems() throws IOException {
-        transactions = FXCollections.observableArrayList(transactionService.getByUserId(UserSession.getInstance().getUser().getId()));
+        transactions.addAll(transactionService.getByUserId(UserSession.getInstance().getUser().getId()));
 
         tableView.setRowFactory(new Callback<TableView<Transaction>, TableRow<Transaction>>() {
             @Override
@@ -109,7 +120,8 @@ public class DashboardController implements Initializable {
                 return row;
             }
         });
-        tableView.getItems().setAll(transactions);
+
+        tableView.setItems(transactions);
     }
 
     private void populateTransactionTypeOptions() {

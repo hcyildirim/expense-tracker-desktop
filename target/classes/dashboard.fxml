@@ -49,5 +49,6 @@
                    prefWidth="400"/>
         <ComboBox fx:id="typeOptions" prefWidth="400" promptText="-- select an option --" />
         <Button fx:id="addButton" text="Add" prefWidth="100" onAction="#addTransaction"/>
+        <Button fx:id="deleteButton" text="Delete" prefWidth="100" onAction="#deleteTransaction"/>
     </HBox>
 </GridPane>
