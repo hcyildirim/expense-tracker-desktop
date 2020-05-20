@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Window;
+import javafx.util.Callback;
 import models.Transaction;
 import models.UserSession;
 import services.TransactionService;
@@ -83,6 +84,25 @@ public class DashboardController implements Initializable {
 
     private void populateTableItems() throws IOException {
         transactions = FXCollections.observableArrayList(transactionService.getByUserId(UserSession.getInstance().getUser().getId()));
+
+        tableView.setRowFactory(new Callback<TableView<Transaction>, TableRow<Transaction>>() {
+            @Override
+            public TableRow<Transaction> call(TableView<Transaction> tableView) {
+                final TableRow<Transaction> row = new TableRow<Transaction>() {
+                    @Override
+                    protected void updateItem(Transaction data, boolean empty) {
+                        super.updateItem(data, empty);
+                        if (data != null && data.getType().equals(Transaction.Type.INCOME)) {
+                            setStyle("-fx-text-background-color: green;");
+                        } else {
+                            setStyle("-fx-text-background-color: red;");
+                        }
+                    }
+                };
+
+                return row;
+            }
+        });
         tableView.getItems().setAll(transactions);
     }
 

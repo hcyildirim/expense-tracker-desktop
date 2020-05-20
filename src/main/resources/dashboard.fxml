@@ -22,10 +22,6 @@
     </HBox>
     <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" GridPane.rowIndex="2">
         <columns>
-            <TableColumn text="Type" prefWidth="100">
-                <cellValueFactory><PropertyValueFactory property="type" />
-                </cellValueFactory>
-            </TableColumn>
             <TableColumn text="Description" prefWidth="400">
                 <cellValueFactory><PropertyValueFactory property="description" />
                 </cellValueFactory>
