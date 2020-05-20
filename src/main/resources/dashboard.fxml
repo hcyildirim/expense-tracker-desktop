@@ -13,14 +13,16 @@
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
     </padding>
 
-    <HBox spacing="5" alignment="top_right" GridPane.columnIndex="0" GridPane.rowIndex="1">
-        <Label fx:id="lblTotal" prefWidth="250" alignment="CENTER_LEFT">
+    <HBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Button text="Pie Chart" prefWidth="100" onAction="#goToPieChart"/>
+
+        <Label fx:id="lblTotal" minWidth="100" maxWidth="Infinity" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
             <font>
                 <Font name="System Bold" size="15.0" />
             </font>
         </Label>
 
-        <Label fx:id="lblUser" prefWidth="250" alignment="CENTER_RIGHT">
+        <Label fx:id="lblUser" minWidth="100" maxWidth="Infinity" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
             <font>
                 <Font name="System Bold" size="15.0" />
             </font>

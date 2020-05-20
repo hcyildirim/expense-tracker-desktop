@@ -1,10 +1,12 @@
 package services;
 
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.PieChart.Data;
 import models.Transaction;
 import repositories.TransactionRepository;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.io.IOException;
@@ -43,6 +45,25 @@ public class TransactionService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Data> getPieChartData(String uuid) throws IOException {
+        List<PieChart.Data> pieChartData = new ArrayList<>();
+        List<Transaction> transactions = getByUserId(uuid);
+
+        Predicate<Transaction> incomePredicate = d -> d.getType().equals(Transaction.Type.INCOME);
+        Predicate<Transaction> outcomePredicate = d -> d.getType().equals(Transaction.Type.OUTCOME);
+
+        float incomeSum = transactions.stream().filter(incomePredicate)
+                .collect(Collectors.summingDouble(o -> o.getAmount())).floatValue();
+
+        float outcomeSum = transactions.stream().filter(outcomePredicate)
+                .collect(Collectors.summingDouble(o -> o.getAmount())).floatValue();
+
+        pieChartData.add(new Data("INCOME", Math.floor(incomeSum)));
+        pieChartData.add(new Data("OUTCOME", Math.floor(outcomeSum)));
+
+        return pieChartData;
     }
 
     public List<Transaction> getByUserId(String uuid) throws IOException {
