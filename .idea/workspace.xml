@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="expense-tracker-desktop:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a41890b4-edee-43e1-ad46-087b79a8d194" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/expense_tracker_desktop_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/PieChartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/PieChartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/TransactionController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/TransactionController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/TransactionController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/TransactionController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/TransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/TransactionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Transaction$Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Transaction$Type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/UserSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/UserSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repositories/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/Repository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repositories/TransactionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/TransactionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/TransactionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utilities/AlertHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utilities/AlertHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utilities/LocalDateTimeFormatterHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utilities/LocalDateTimeFormatterHelper.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +72,16 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/utilities" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.39195403" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/utilities" />
       <recent name="$PROJECT_DIR$/src/main/java/services" />
@@ -103,7 +133,7 @@
       <workItem from="1590000160295" duration="3713000" />
       <workItem from="1590249560199" duration="351000" />
       <workItem from="1590498647077" duration="2686000" />
-      <workItem from="1590501726150" duration="2275000" />
+      <workItem from="1590501726150" duration="5434000" />
     </task>
     <servers />
   </component>
@@ -115,14 +145,18 @@
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
     <state x="547" y="-678" key="#com.intellij.debugger.actions.ViewTextAction/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1588459229607" />
-    <state x="173" y="-878" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586116977938">
+    <state x="173" y="-878" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590517485922">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="173" y="-878" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1586116977938" />
+    <state x="173" y="-878" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590517485922" />
     <state x="522" y="-824" key="#com.intellij.ide.util.MemberChooser" timestamp="1590002698730">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
     <state x="522" y="-824" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590002698730" />
+    <state x="446" y="-750" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590510891145">
+      <screen x="-251" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="446" y="-750" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590510891145" />
     <state x="291" y="-608" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1588454496093">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
@@ -139,40 +173,40 @@
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
     <state width="453" height="466" key="DebuggerActiveHint/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501137908" />
-    <state width="1878" height="316" key="GridCell.Tab.0.bottom" timestamp="1590502299355">
+    <state width="1878" height="316" key="GridCell.Tab.0.bottom" timestamp="1590509924025">
       <screen x="-251" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="316" key="GridCell.Tab.0.bottom/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501873063" />
     <state width="1638" height="306" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1588518041034" />
     <state width="1878" height="316" key="GridCell.Tab.0.bottom/0.23.1680.1027/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1589319806004" />
-    <state width="1878" height="316" key="GridCell.Tab.0.bottom/0.23.1680.975/-251.-1057.1920.1057@-251.-1057.1920.1057" timestamp="1590502299355" />
+    <state width="1878" height="316" key="GridCell.Tab.0.bottom/0.23.1680.975/-251.-1057.1920.1057@-251.-1057.1920.1057" timestamp="1590509924025" />
     <state width="1878" height="268" key="GridCell.Tab.0.bottom/0.23.1680.975/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501430489" />
     <state width="1638" height="307" key="GridCell.Tab.0.bottom/0.23.1680.975@0.23.1680.975" timestamp="1587326423814" />
-    <state width="1878" height="316" key="GridCell.Tab.0.center" timestamp="1590502299351">
+    <state width="1878" height="316" key="GridCell.Tab.0.center" timestamp="1590509924022">
       <screen x="-251" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="316" key="GridCell.Tab.0.center/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501873061" />
     <state width="1638" height="306" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1588518041032" />
     <state width="1878" height="316" key="GridCell.Tab.0.center/0.23.1680.1027/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1589319806001" />
-    <state width="1878" height="316" key="GridCell.Tab.0.center/0.23.1680.975/-251.-1057.1920.1057@-251.-1057.1920.1057" timestamp="1590502299351" />
+    <state width="1878" height="316" key="GridCell.Tab.0.center/0.23.1680.975/-251.-1057.1920.1057@-251.-1057.1920.1057" timestamp="1590509924022" />
     <state width="1878" height="268" key="GridCell.Tab.0.center/0.23.1680.975/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501430487" />
     <state width="1638" height="307" key="GridCell.Tab.0.center/0.23.1680.975@0.23.1680.975" timestamp="1587326423812" />
-    <state width="1878" height="316" key="GridCell.Tab.0.left" timestamp="1590502299350">
+    <state width="1878" height="316" key="GridCell.Tab.0.left" timestamp="1590509924021">
       <screen x="-251" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="316" key="GridCell.Tab.0.left/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501873059" />
     <state width="1638" height="306" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1588518041031" />
     <state width="1878" height="316" key="GridCell.Tab.0.left/0.23.1680.1027/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1589319805999" />
-    <state width="1878" height="316" key="GridCell.Tab.0.left/0.23.1680.975/-251.-1057.1920.1057@-251.-1057.1920.1057" timestamp="1590502299350" />
+    <state width="1878" height="316" key="GridCell.Tab.0.left/0.23.1680.975/-251.-1057.1920.1057@-251.-1057.1920.1057" timestamp="1590509924021" />
     <state width="1878" height="268" key="GridCell.Tab.0.left/0.23.1680.975/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501430485" />
     <state width="1638" height="307" key="GridCell.Tab.0.left/0.23.1680.975@0.23.1680.975" timestamp="1587326423811" />
-    <state width="1878" height="316" key="GridCell.Tab.0.right" timestamp="1590502299352">
+    <state width="1878" height="316" key="GridCell.Tab.0.right" timestamp="1590509924024">
       <screen x="-251" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="316" key="GridCell.Tab.0.right/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501873062" />
     <state width="1638" height="306" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1588518041033" />
     <state width="1878" height="316" key="GridCell.Tab.0.right/0.23.1680.1027/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1589319806002" />
-    <state width="1878" height="316" key="GridCell.Tab.0.right/0.23.1680.975/-251.-1057.1920.1057@-251.-1057.1920.1057" timestamp="1590502299352" />
+    <state width="1878" height="316" key="GridCell.Tab.0.right/0.23.1680.975/-251.-1057.1920.1057@-251.-1057.1920.1057" timestamp="1590509924024" />
     <state width="1878" height="268" key="GridCell.Tab.0.right/0.23.1680.975/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501430488" />
     <state width="1638" height="307" key="GridCell.Tab.0.right/0.23.1680.975@0.23.1680.975" timestamp="1587326423813" />
     <state width="1878" height="268" key="GridCell.Tab.1.bottom" timestamp="1590501430494">
@@ -199,10 +233,10 @@
     <state width="1878" height="268" key="GridCell.Tab.1.right/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501227068" />
     <state width="1878" height="375" key="GridCell.Tab.1.right/0.23.1680.975/-251.-1057.1920.1057@-251.-1057.1920.1057" timestamp="1588541201304" />
     <state width="1878" height="268" key="GridCell.Tab.1.right/0.23.1680.975/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590501430493" />
-    <state x="197" y="-959" key="SettingsEditor" timestamp="1588459414278">
+    <state x="197" y="-959" key="SettingsEditor" timestamp="1590513142550">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="197" y="-959" key="SettingsEditor/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1588459414278" />
+    <state x="197" y="-959" key="SettingsEditor/0.0.1680.1050/-251.-1080.1920.1080@-251.-1080.1920.1080" timestamp="1590513142550" />
     <state x="309" y="-800" key="Vcs.Push.Dialog.v2" timestamp="1588455913949">
       <screen x="-251" y="-1080" width="1920" height="1080" />
     </state>
