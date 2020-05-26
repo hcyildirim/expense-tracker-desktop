@@ -23,7 +23,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-public class DashboardController implements Initializable {
+public class TransactionController implements Initializable {
 
     private TransactionService transactionService = new TransactionService();
 
@@ -118,6 +118,8 @@ public class DashboardController implements Initializable {
 
     @FXML
     public void refresh(ActionEvent event) throws IOException {
+        transactions = FXCollections.observableArrayList();
+
         populateTableItems();
         populateTransactionTypeOptions();
         setTotalLabelText();

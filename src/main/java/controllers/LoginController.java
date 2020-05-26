@@ -63,7 +63,7 @@ public class LoginController {
     }
 
     public void goToDashboard(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/dashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/transactions.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Dashboard");
