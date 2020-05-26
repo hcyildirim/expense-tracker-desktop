@@ -66,6 +66,14 @@ public class TransactionService {
         return pieChartData;
     }
 
+    public List<Transaction> search(String description) throws IOException {
+        Predicate<Transaction> descriptionPredicate = d -> d.getDescription().contains(description);
+
+        return transactionRepository.all().stream()
+                .filter(descriptionPredicate)
+                .collect(Collectors.toList());
+    }
+
     public List<Transaction> getByUserId(String uuid) throws IOException {
         Predicate<Transaction> userUuidPredicate = d -> d.getUserId().equalsIgnoreCase(uuid);
 

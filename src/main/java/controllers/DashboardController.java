@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -50,6 +49,9 @@ public class DashboardController implements Initializable {
 
     @FXML
     private Button addButton;
+
+    @FXML
+    private Button searchButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -100,6 +102,26 @@ public class DashboardController implements Initializable {
         transactions.remove(transaction);
         transactionService.delete(transaction.getId());
 
+        setTotalLabelText();
+        clearInputs();
+    }
+
+    @FXML
+    public void searchTransaction(ActionEvent event) throws IOException {
+        String description = descriptionField.getText();
+
+        transactions = FXCollections.observableArrayList(transactionService.search(description));
+        tableView.setItems(transactions);
+
+        setTotalLabelText();
+    }
+
+    @FXML
+    public void refresh(ActionEvent event) throws IOException {
+        populateTableItems();
+        populateTransactionTypeOptions();
+        setTotalLabelText();
+        setLoggedInLabelText();
         setTotalLabelText();
         clearInputs();
     }
